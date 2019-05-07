@@ -1,0 +1,89 @@
+<mvc:View controllerName="com.tree.mukesh.controller.Menu" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:tnt="sap.tnt">
+	
+		<tnt:ToolHeader>
+		<Button icon="sap-icon://menu2" type="Transparent" press="onMenuPress">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" />
+			</layoutData>
+		</Button>
+		<Button text="Alan Smith" type="Transparent" press="onUserNamePress">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" />
+			</layoutData>
+		</Button>
+	
+		<MenuButton text="Run" type="Transparent">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="Low" />
+			</layoutData>
+		</MenuButton>
+		<MenuButton text="Tools" type="Transparent">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="Low" />
+			</layoutData>
+		</MenuButton>
+		<tnt:ToolHeaderUtilitySeparator />
+		<ToolbarSpacer>
+			<layoutData>
+				<OverflowToolbarLayoutData minWidth="20px" />
+			</layoutData>
+		</ToolbarSpacer>
+		<SearchField width="240px">
+		<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" />
+			</layoutData>
+		</SearchField>
+		<Button text="Alan Smith" type="Transparent" press="onUserNamePress">
+			<layoutData>
+				<OverflowToolbarLayoutData priority="NeverOverflow" />
+			</layoutData>
+		</Button>
+
+	</tnt:ToolHeader>
+	<SplitApp id="app">
+	
+		<masterPages>
+			<Page id="master" title="{i18n>title}" >
+				<content>
+					<Tree id="Tree" items="{path: '/'}" mode = "SingleSelectMaster" itemPress = "onPressTreeItem" >
+						<StandardTreeItem title="{text}" type= "Active" press= "onPressTreeItem" />
+					</Tree>
+				</content>
+			</Page>
+				<Page id="master2" title="{i18n>title}">
+				<content>
+						<Label text="This will come when user changes the menu"/>
+				</content>
+			</Page>
+		</masterPages>
+		<detailPages>
+			<Page id="detail" title="Detail 1" class="sapUiStdPage">
+				<content>
+					<Label text="Detail page 1"/>
+					<Button text="Go to Detail page2" press="onPressNavToDetail"/>
+				</content>
+			</Page>
+				<Page id="detail1" title="Detail 1" class="sapUiStdPage">
+				<content>
+					<Label text="This will come when user changes the menu"/>
+					<Button text="Go to Detail page2" press="onPressNavToDetail"/>
+				</content>
+			</Page>
+			<Page id="detail2" title="Detail 3 Page" class="sapUiStdPage" showNavButton="true"  navButtonPress="onPressDetailBack">
+				<content>
+					<Label text="This is Detail Page3"/>
+					<Input/>
+					<Label text="Label 2"/>
+					<Input/>
+					<Label text="Label 3"/>
+					<Input/>
+					<Label text="Label 4"/>
+					<Input/>
+					<Label text="Label 5"/>
+					<Input/>
+				</content>
+			</Page>
+		</detailPages>
+	</SplitApp>
+
+</mvc:View>
